@@ -1,7 +1,7 @@
 # Case Study: Data-Driven AR&VR Graphic Framework for Broadcast
 
-A scalable, event-driven Unreal Engine framework for managing dynamic broadcast graphics, real-time data ingestion, and runtime UI binding.
-Designed to support multiple data sources, rapid content switching, and designer-friendly extensibility while keeping systems decoupled, testable, and maintainable.
+A scalable Unreal Engine framework for managing dynamic broadcast graphics, real-time data ingestion, and runtime UI binding.
+Designed to support multiple data sources, rapid content switching, and designer-friendly extensibility while keeping systems decoupled, and easily maintainable.
 
 ---
 
@@ -105,7 +105,7 @@ The systems below demonstrate how these principles were applied across content m
   <h3>Impact</h3>
   <ul>
     <li><strong>Before ➙</strong> data source changes required modifications across multiple systems</li>
-    <li><strong>After ➙</strong> new data sources added with minimal or zero impact on consumers</li>
+    <li><strong>After ➙</strong> ability to add new data sources zero impact on consumers</li>
   </ul>
 
   <h3>Key Learnings</h3>
@@ -119,7 +119,7 @@ The systems below demonstrate how these principles were applied across content m
 
 <details>
   <summary><strong>"Event-Driven Data Binding Layer"</strong><br>
-  A subscription-based data binding system that keeps runtime content and UI synchronized all while maintaining a loose component based integration workflow to provide design and integration flexibility.</summary>
+  A subscription-based data binding system that keeps runtime UI automatically in sync with live data using plug-and-play components that support fast, safe design iteration.</summary>
 
   <blockquote>
   <h3>Outcome</h3>
@@ -147,14 +147,14 @@ The systems below demonstrate how these principles were applied across content m
   <h3>Impact</h3>
   <ul>
     <li><strong>Before ➙</strong> frequent polling and duplicated update logic leading to bloated code base</li>
-    <li><strong>After ➙</strong> efficient, reactive updates on plug-and-play components leading to observably improved performance, improved code maintainability by reducing duplication and bload, faster iteration speed for integration.</li>
+    <li><strong>After ➙</strong> efficient, reactive updates, delivering measurable performance gains, reduced code duplication and bloat, and faster integration cycles.</li>
   </ul>
 
   <h3>Key Learnings</h3>
   <ul>
     <li>Event-driven architectures scale better under frequent updates</li>
     <li>Explicit subscriptions make data flow easier to reason about and debug</li>
-    <Li>Component based architecture gives more creative freedom upon integration increasing iteration speed</Li>
+    <li>Component based architecture gives more creative freedom upon integration increasing iteration speed</Li>
   </ul>
 
   </blockquote>
