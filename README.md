@@ -31,7 +31,7 @@ The systems below demonstrate how these principles were applied across content m
 ## Framework Breakdown
 <details>
   <summary><strong>"Content Management Framework"</strong><br>
-  A modular system for routing, activating, and updating runtime content across multiple zones using a centralized manager for singular external hooking.</summary>
+  A modular system for routing, activating, and updating runtime content across multiple zones using a centralized manager for singular external hooking, eliminating code duplication, and vastly improving code maintainability.</summary>
 
   <blockquote>
 
