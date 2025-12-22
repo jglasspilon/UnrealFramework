@@ -15,7 +15,7 @@ Key principles:
 - Clear ownership of responsibility across layers  
 - Designer and integrator-friendly extension points  
 
-The systems below demonstrate how these principles were applied across content management, data ingestion, and UI binding.
+The systems below demonstrate how these principles were applied across content management, data ingestion, and UI binding. Expand a summary to explore the design challenge, technical approach, and measurable impact.
 
 ---
 
@@ -29,8 +29,8 @@ The systems below demonstrate how these principles were applied across content m
 
 ## Framework Breakdown
 <details>
-  <summary><strong>"Content Zone & Content Manager Framework"</strong><br>
-  A modular system for routing, activating, and updating runtime content across multiple zones using a centralized manager.</summary>
+  <summary><strong>"Content Management Framework"</strong><br>
+  A modular system for routing, activating, and updating runtime content across multiple zones using a centralized manager for singular external hooking.</summary>
 
   <blockquote>
 
@@ -59,14 +59,14 @@ The systems below demonstrate how these principles were applied across content m
 
   <h3>Impact</h3>
   <ul>
-    <li><strong>Before ➙</strong> content logic tightly coupled to specific UI or world actors</li>
-    <li><strong>After ➙</strong> clean separation between content routing, state management, and rendering</li>
+    <li><strong>Before ➙</strong> content logic tightly coupled to specific UI or world actors, leading to duplication, maintainability issues and errors across transitions.</li>
+    <li><strong>After ➙</strong> clean separation between content routing, state management, and rendering, eliminating code duplication, and vastly improving code maintainability.</li>
   </ul>
 
   <h3>Key Learnings</h3>
   <ul>
-    <li>Explicit ownership of state dramatically simplifies content lifecycle management</li>
-    <li>Enum-driven routing reduces runtime errors and improves readability</li>
+    <li>Explicit ownership of states and their transitions dramatically simplifies content lifecycle management</li>
+    <li>Abstracting out transition logic from content allows for faster graphic iteration without worry of lifecycle management</li>
   </ul>
 
   </blockquote>
@@ -74,7 +74,7 @@ The systems below demonstrate how these principles were applied across content m
 
 <details>
   <summary><strong>"Connection & Data Ingestion Framework"</strong><br>
-  A pluggable data ingestion layer supporting multiple connection types and unified data access.</summary>
+  A pluggable data ingestion layer supporting protocol agnostic communication and unified data access.</summary>
 
   <blockquote>
 
@@ -118,42 +118,42 @@ The systems below demonstrate how these principles were applied across content m
 
 <details>
   <summary><strong>"Event-Driven Data Binding Layer"</strong><br>
-  A subscription-based data binding system that keeps runtime content and UI synchronized.</summary>
+  A subscription-based data binding system that keeps runtime content and UI synchronized all while maintaining a loose component based integration workflow.</summary>
 
   <blockquote>
-
   <h3>Outcome</h3>
   <p>
-    Allowed content and UI elements to react automatically to data changes without polling or tight coupling to data sources.
+    Allowed content and UI elements to react automatically to data changes without polling or tight coupling to data sources. The component based approach also allowed for fast iteration when creating or modyfing graphics.
   </p>
 
   <h3>Responsibilities</h3>
   <ul>
     <li>Designed a Data Bindable interface for subscription-based updates</li>
-    <li>Implemented a query-driven data access model</li>
+    <li>Implemented an intuitive JSON parsable binding structure mapping to stored JSON data</li>
     <li>Integrated auto-update and manual update control for performance tuning</li>
   </ul>
 
   <h3>Challenge</h3>
   <p>
-    Keeping UI and content synchronized with frequently changing data often leads to inefficient polling or tightly coupled update logic.
+    Keeping UI and content synchronized with frequently changing data often leads to inefficient polling or tightly coupled update logic. Binding data to UI also generally requires manual mapping of data which increases the code base as graphics and data grow.  
   </p>
 
   <h3>Solution</h3>
   <p>
-    Introduce an event-driven subscription model where binders register interest in specific data streams. The Data Center pushes updates only when relevant data changes.
+    Introduce an event-driven subscription model where binders register interest in specific data streams. The Data Center pushes updates only when relevant data changes. These data binders would be developed as components giving designers freedom to iterate on their designs with easy plug-and-play access to runtime data.
   </p>
 
   <h3>Impact</h3>
   <ul>
-    <li><strong>Before ➙</strong> frequent polling and duplicated update logic</li>
-    <li><strong>After ➙</strong> efficient, reactive updates with clear ownership</li>
+    <li><strong>Before ➙</strong> frequent polling and duplicated update logic leading to bloated code base</li>
+    <li><strong>After ➙</strong> efficient, reactive updates on plug-and-play components leading to observably improved performance, improved code maintainability by reducing duplication and bload, faster iteration speed for integration.</li>
   </ul>
 
   <h3>Key Learnings</h3>
   <ul>
     <li>Event-driven architectures scale better under frequent updates</li>
     <li>Explicit subscriptions make data flow easier to reason about and debug</li>
+    <Li>Component based architecture gives more creative freedom upon integration increasing iteration speed</Li>
   </ul>
 
   </blockquote>
