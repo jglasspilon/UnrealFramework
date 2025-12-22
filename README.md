@@ -75,7 +75,7 @@ The systems below demonstrate how these principles were applied across content m
 
 <details>
   <summary><strong>"Connection & Data Ingestion Framework"</strong><br>
-  A pluggable data ingestion layer supporting protocol agnostic communication and unified data access.</summary>
+  A pluggable data ingestion layer supporting protocol agnostic communication and unified data access, abstracting out any protocol specific logic while providing a single source of truth for other systems to hook into.</summary>
 
   <blockquote>
 
@@ -119,7 +119,7 @@ The systems below demonstrate how these principles were applied across content m
 
 <details>
   <summary><strong>"Event-Driven Data Binding Layer"</strong><br>
-  A subscription-based data binding system that keeps runtime content and UI synchronized all while maintaining a loose component based integration workflow.</summary>
+  A subscription-based data binding system that keeps runtime content and UI synchronized all while maintaining a loose component based integration workflow to provide design and integration flexibility.</summary>
 
   <blockquote>
   <h3>Outcome</h3>
@@ -162,17 +162,20 @@ The systems below demonstrate how these principles were applied across content m
 
 ---
 
-### Framework Overview
-![Framework Overview](Media/FrameworkOverview.png)
+## Framework Overview
+*Diagrams shown are conceptual and represent high-level architectural patterns.
+Names and structures have been generalized to avoid disclosure of proprietary implementations.*
 
----
-
-## Visual Architecture Overview
+### Visual Architecture Overview
+> High-level view of the framework showing how content management, data ingestion, and event-driven data binding interact through decoupled systems. Emphasizes separation of concerns and scalable data flow.
+> ![Framework Overview](Media/FrameworkOverview.png)
 
 ### Content Management Pipeline
-![Content Management Pipeline](Media/ContentManagementPipeline.png)
-
----
+> Illustrates how JSON-driven commands are routed through a centralized manager to activate, update, and transition content across independent runtime zones. Content lifecycles are handled locally to avoid global state coupling.
+> 
+> ![Content Management Pipeline](Media/ContentManagementPipeline.png)
 
 ### Data Ingestion & Distribution Pipeline
-![Data Management Pipeline](Media/DataManagementPipeline.png)
+> Shows a protocol-agnostic data ingestion layer feeding parsed data into a centralized Data Center that broadcasts updates to subscribed systems. Enables multiple data sources without hard dependencies between consumers.
+> 
+> ![Data Management Pipeline](Media/DataManagementPipeline.png)
