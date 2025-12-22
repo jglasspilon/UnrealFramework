@@ -171,7 +171,7 @@ Names and structures have been generalized to avoid disclosure of proprietary im
 > ![Framework Overview](Media/FrameworkOverview.png)
 
 ### Content Management Pipeline
-> Illustrates how JSON-driven commands are routed through a centralized manager to activate, update, and transition content across independent runtime zones. Content lifecycles are handled locally to avoid global state coupling.
+> Illustrates how JSON-driven commands are routed through a centralized manager to activate, update, and transition content across independent zones at runtime. Content lifecycles are handled locally to avoid global state coupling.
 > 
 > ![Content Management Pipeline](Media/ContentManagementPipeline.png)
 
