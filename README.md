@@ -1,6 +1,7 @@
 # Case Study: Data-Driven AR&VR Graphic Framework for Broadcast
 
-A scalable, event-driven framework designed to manage dynamic content, data ingestion, and UI binding in Unreal Engine. Built to support multiple data sources, runtime content switching, and designer-friendly extensibility while keeping systems decoupled, testable, and maintainable.
+A scalable, event-driven Unreal Engine framework for managing dynamic broadcast graphics, real-time data ingestion, and runtime UI binding.
+Designed to support multiple data sources, rapid content switching, and designer-friendly extensibility while keeping systems decoupled, testable, and maintainable.
 
 ---
 
@@ -10,12 +11,12 @@ This framework was designed around **separation of concerns, scalability, and no
 The goal was to allow teams to introduce new content types, data sources, and UI bindings without rewriting existing systems or introducing brittle dependencies.
 
 Key principles:
-- Event-driven, loosely coupled systems  
-- Data-driven configuration via JSON  
+- Event-driven, loosely coupled architecture  
+- Real-time, data-driven configuration via JSON  
 - Clear ownership of responsibility across layers  
 - Designer and integrator-friendly extension points  
 
-The systems below demonstrate how these principles were applied across content management, data ingestion, and UI binding. Expand a summary to explore the design challenge, technical approach, and measurable impact.
+The systems below demonstrate how these principles were applied across content management, data ingestion, and UI binding. Expand a summary to explore the design challenge, technical approach, and resulting impact.
 
 ---
 
