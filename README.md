@@ -1,4 +1,4 @@
-# Case Study: Data-Driven AR&VR Graphic Framework for Broadcast
+# Case Study: Data-Driven AR&VR Graphic Framework for Broadcast (Unreal Engine)
 
 A scalable Unreal Engine blueprint framework for managing dynamic broadcast graphics, real-time data ingestion, and runtime UI binding.
 Designed to support multiple data sources, rapid content switching, and designer-friendly extensibility while keeping systems decoupled, and easily maintainable.
