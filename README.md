@@ -30,51 +30,7 @@ The systems below demonstrate how these principles were applied across content m
 
 ## Framework Breakdown
 <details>
-  <summary><strong>"Content Management Framework"</strong><br>
-  A modular system for routing, activating, and updating runtime content across multiple zones using a centralized manager for singular external hooking, eliminating code duplication, and vastly improving code maintainability.</summary>
-
-  <blockquote>
-
-  <h3>Outcome</h3>
-  <p>
-    Enabled dynamic content switching and updates across multiple runtime zones using a single orchestration layer, reducing coupling between content logic and presentation.
-  </p>
-
-  <h3>Responsibilities</h3>
-  <ul>
-    <li>Designed a centralized Content Manager responsible for routing content updates via JSON payloads</li>
-    <li>Defined Content Zones as independently managed runtime areas</li>
-    <li>Created an abstract Content base class with a predictable lifecycle (Prepare, Update, Cleanup)</li>
-    <li>Implemented enum-based content and zone identification for safety and clarity</li>
-  </ul>
-
-  <h3>Challenge</h3>
-  <p>
-    Managing multiple dynamic content areas often leads to tightly coupled logic, duplicated update paths, and brittle state management. As content types grow, systems become harder to reason about and modify safely.
-  </p>
-
-  <h3>Solution</h3>
-  <p>
-    Introduce a Content Manager that routes JSON-driven commands to individual Content Zones. Each zone owns its active content state and manages transitions internally, while content implementations remain unaware of higher-level orchestration.
-  </p>
-
-  <h3>Impact</h3>
-  <ul>
-    <li><strong>Before ➙</strong> content logic tightly coupled to specific UI or world actors, leading to duplication, maintainability issues and errors across transitions.</li>
-    <li><strong>After ➙</strong> clean separation between content routing, state management, and rendering, eliminating code duplication, and vastly improving code maintainability.</li>
-  </ul>
-
-  <h3>Key Learnings</h3>
-  <ul>
-    <li>Explicit ownership of states and their transitions dramatically simplifies content lifecycle management</li>
-    <li>Abstracting out transition logic from content allows for faster graphic iteration without worry of lifecycle management</li>
-  </ul>
-
-  </blockquote>
-</details>
-
-<details>
-  <summary><strong>"Connection & Data Ingestion Framework"</strong><br>
+  <summary><strong>"Connection & Data Ingestion Pipeline"</strong><br>
   A pluggable data ingestion layer supporting protocol agnostic communication and unified data access, abstracting out any protocol specific logic while providing a single source of truth for other systems to hook into.</summary>
 
   <blockquote>
@@ -112,6 +68,50 @@ The systems below demonstrate how these principles were applied across content m
   <ul>
     <li>Decoupling data acquisition from data consumption improves system longevity</li>
     <li>Factory-driven creation simplifies onboarding new connection types</li>
+  </ul>
+
+  </blockquote>
+</details>
+
+<details>
+  <summary><strong>"Content Management Pipeline"</strong><br>
+  A modular system for routing, activating, and updating runtime content across multiple zones using a centralized manager for singular external hooking, eliminating code duplication, and vastly improving code maintainability.</summary>
+
+  <blockquote>
+
+  <h3>Outcome</h3>
+  <p>
+    Enabled dynamic content switching and updates across multiple runtime zones using a single orchestration layer, reducing coupling between content logic and presentation.
+  </p>
+
+  <h3>Responsibilities</h3>
+  <ul>
+    <li>Designed a centralized Content Manager responsible for routing content updates via JSON payloads</li>
+    <li>Defined Content Zones as independently managed runtime areas</li>
+    <li>Created an abstract Content base class with a predictable lifecycle (Prepare, Update, Cleanup)</li>
+    <li>Implemented enum-based content and zone identification for safety and clarity</li>
+  </ul>
+
+  <h3>Challenge</h3>
+  <p>
+    Managing multiple dynamic content areas often leads to tightly coupled logic, duplicated update paths, and brittle state management. As content types grow, systems become harder to reason about and modify safely.
+  </p>
+
+  <h3>Solution</h3>
+  <p>
+    Introduce a Content Manager that routes JSON-driven commands to individual Content Zones. Each zone owns its active content state and manages transitions internally, while content implementations remain unaware of higher-level orchestration.
+  </p>
+
+  <h3>Impact</h3>
+  <ul>
+    <li><strong>Before ➙</strong> content logic tightly coupled to specific UI or world actors, leading to duplication, maintainability issues and errors across transitions.</li>
+    <li><strong>After ➙</strong> clean separation between content routing, state management, and rendering, eliminating code duplication, and vastly improving code maintainability.</li>
+  </ul>
+
+  <h3>Key Learnings</h3>
+  <ul>
+    <li>Explicit ownership of states and their transitions dramatically simplifies content lifecycle management</li>
+    <li>Abstracting out transition logic from content allows for faster graphic iteration without worry of lifecycle management</li>
   </ul>
 
   </blockquote>
