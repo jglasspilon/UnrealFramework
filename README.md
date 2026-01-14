@@ -61,7 +61,7 @@ The systems below demonstrate how these principles were applied across content m
   <h3>Impact</h3>
   <ul>
     <li><strong>Before ➙</strong> data source changes required modifications across multiple systems</li>
-    <li><strong>After ➙</strong> ability to add new data sources zero impact on consumers</li>
+    <li><strong>After ➙</strong> ability to add new data sources with zero impact on consumers</li>
   </ul>
 
   <h3>Key Learnings</h3>
